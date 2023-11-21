@@ -1,90 +1,88 @@
 document
-  .querySelector(".selecting-table")
-  .addEventListener("contextmenu", (e) => e.preventDefault());
+  .querySelector('.selecting-table')
+  .addEventListener('contextmenu', (e) => e.preventDefault())
 const tooltip_item = Array.from(
-  document.querySelectorAll(".selecting-table td")
-).filter((item) => item.classList.contains("selecting-td"));
-const tooltip_container = document.getElementById("spec-tooltip-container");
+  document.querySelectorAll('.selecting-table td')
+).filter((item) => item.classList.contains('selecting-td'))
+const tooltip_container = document.getElementById('spec-tooltip-container')
 tooltip_item.forEach((item) =>
-  item.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-    tooltip_container.innerHTML = SetupHoverTooltip(e.target);
-    tooltip_container.toggleAttribute("hidden");
+  item.addEventListener('contextmenu', (e) => {
+    e.preventDefault()
+    tooltip_container.innerHTML = SetupHoverTooltip(e.target)
+    tooltip_container.toggleAttribute('hidden')
     tooltip_container.firstElementChild.style.left = `${
       e.target.getBoundingClientRect().left +
       e.target.getBoundingClientRect().width +
       4
-    }px`;
+    }px`
     if (e.target.getBoundingClientRect().top <= 550)
       tooltip_container.firstElementChild.style.top = `${
         e.target.getBoundingClientRect().top
-      }px`;
+      }px`
     else
       tooltip_container.firstElementChild.style.top = `${
         e.target.getBoundingClientRect().bottom -
         tooltip_container.firstElementChild.getBoundingClientRect().height
-      }px`;
+      }px`
     // console.log();
   })
-);
+)
 // const button_tiny = document.getElementById("button-tiny")
-tooltip_container.addEventListener("click", (e) => {
+tooltip_container.addEventListener('click', (e) => {
   if (e.target == tooltip_container.children[0].children[0].children[1])
-    tooltip_container.toggleAttribute("hidden");
-});
-const party_data_tooltip = Array.from(
-  document.querySelectorAll("[data-party]")
-);
+    tooltip_container.toggleAttribute('hidden')
+})
+const party_data_tooltip = Array.from(document.querySelectorAll('[data-party]'))
 party_data_tooltip.forEach((item) =>
-  item.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-    if (!e.target.classList.contains("party-default")) {
+  item.addEventListener('contextmenu', (e) => {
+    e.preventDefault()
+    if (!e.target.classList.contains('party-default')) {
       if (
-        e.target.parentElement.classList.contains("group-box2") ||
-        e.target.parentElement.classList.contains("group-box4")
+        e.target.parentElement.classList.contains('group-box2') ||
+        e.target.parentElement.classList.contains('group-box4')
       ) {
         //
-        tooltip_container.innerHTML = SetupHoverTooltip(e.target);
-        tooltip_container.toggleAttribute("hidden");
+        tooltip_container.innerHTML = SetupHoverTooltip(e.target)
+        tooltip_container.toggleAttribute('hidden')
         //
         tooltip_container.firstElementChild.style.left = `${
           e.target.getBoundingClientRect().left +
           e.target.getBoundingClientRect().width +
           4
-        }px`;
+        }px`
         tooltip_container.firstElementChild.style.top = `${
           e.target.getBoundingClientRect().top
-        }px`;
+        }px`
       } else {
         //
-        tooltip_container.innerHTML = SetupHoverTooltip(e.target);
-        tooltip_container.toggleAttribute("hidden");
+        tooltip_container.innerHTML = SetupHoverTooltip(e.target)
+        tooltip_container.toggleAttribute('hidden')
         //
         tooltip_container.firstElementChild.style.left = `${
           e.target.getBoundingClientRect().left -
           tooltip_container.firstElementChild.getBoundingClientRect().width -
           4
-        }px`;
+        }px`
         //
         if (e.target.getBoundingClientRect().top <= 500)
           tooltip_container.firstElementChild.style.top = `${
             e.target.getBoundingClientRect().top
-          }px`;
+          }px`
         else
           tooltip_container.firstElementChild.style.top = `${
             e.target.getBoundingClientRect().bottom -
             tooltip_container.firstElementChild.getBoundingClientRect().height -
             8
-          }px`;
+          }px`
       }
     }
   })
-);
+)
 //
 function SetupHoverTooltip(target) {
   // -do this the correct way in the future...
   switch (target.dataset.spec) {
-    case "01":
+    case '01':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-druid">
                 <p>${target.textContent.trim()}</p>
@@ -126,8 +124,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/AbolishPoison.jpg" alt="">
                 <p>Abolish Poison</p>
             </li>
-        </ul>`;
-    case "02":
+        </ul>`
+    case '02':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-druid">
                 <p>${target.textContent.trim()}</p>
@@ -173,8 +171,8 @@ function SetupHoverTooltip(target) {
             <img src="/wrath/imgtip/AbolishPoison.jpg" alt="">
             <p>Abolish Poison</p>
         </li>
-        </ul>`;
-    case "03":
+        </ul>`
+    case '03':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-druid">
                 <p>${target.textContent.trim()}</p>
@@ -220,8 +218,8 @@ function SetupHoverTooltip(target) {
             <img src="/wrath/imgtip/AbolishPoison.jpg" alt="">
             <p>Abolish Poison</p>
         </li>
-        </ul>`;
-    case "04":
+        </ul>`
+    case '04':
       return `<ul id="select-tooltip">
              <li class="select-tooltip-title select-druid">
                  <p>${target.textContent.trim()}</p>
@@ -247,8 +245,8 @@ function SetupHoverTooltip(target) {
                <img src="/wrath/imgtip/AbolishPoison.jpg" alt="">
                <p>Abolish Poison</p>
            </li>
-         </ul>`;
-    case "05":
+         </ul>`
+    case '05':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-hunter">
                 <p>${target.textContent.trim()}</p>
@@ -281,8 +279,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/Sting.jpg" alt="">
                 <p>Sting</p>
         </li>
-        </ul>`;
-    case "06":
+        </ul>`
+    case '06':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-hunter">
                 <p>${target.textContent.trim()}</p>
@@ -307,8 +305,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/Sting.jpg" alt="">
                 <p>Sting</p>
              </li>
-        </ul>`;
-    case "07":
+        </ul>`
+    case '07':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-hunter">
                 <p>${target.textContent.trim()}</p>
@@ -333,8 +331,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/Sting.jpg" alt="">
                 <p>Sting</p>
              </li>
-        </ul>`;
-    case "08":
+        </ul>`
+    case '08':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-mage">
                 <p>${target.textContent.trim()}</p>
@@ -360,8 +358,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/RemoveCurseMage.jpg" alt="">
                 <p>Remove Curse</p>
             </li>
-        </ul>`;
-    case "09":
+        </ul>`
+    case '09':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-mage">
                 <p>${target.textContent.trim()}</p>
@@ -387,8 +385,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/RemoveCurseMage.jpg" alt="">
                 <p>Remove Curse</p>
             </li>
-        </ul>`;
-    case "10":
+        </ul>`
+    case '10':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-mage">
                 <p>${target.textContent.trim()}</p>
@@ -414,8 +412,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/RemoveCurseMage.jpg" alt="">
                 <p>Remove Curse</p>
             </li>
-        </ul>`;
-    case "11":
+        </ul>`
+    case '11':
       return `<ul id="select-tooltip">
                 <li class="select-tooltip-title select-paladin">
                     <p>${target.textContent.trim()}</p>
@@ -445,8 +443,8 @@ function SetupHoverTooltip(target) {
                     <img src="/wrath/imgtip/Cleanse.jpg" alt="">
                     <p>Cleanse</p>
                 </li>
-            </ul>`;
-    case "12":
+            </ul>`
+    case '12':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-paladin">
             <p>${target.textContent.trim()}</p>
@@ -488,8 +486,8 @@ function SetupHoverTooltip(target) {
                     <img src="/wrath/imgtip/Cleanse.jpg" alt="">
                     <p>Cleanse</p>
                 </li>
-            </ul>`;
-    case "13":
+            </ul>`
+    case '13':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-paladin">
             <p>${target.textContent.trim()}</p>
@@ -539,8 +537,8 @@ function SetupHoverTooltip(target) {
                         <img src="/wrath/imgtip/Cleanse.jpg" alt="">
                         <p>Cleanse</p>
                     </li>
-                </ul>`;
-    case "14":
+                </ul>`
+    case '14':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-priest">
                 <p>${target.textContent.trim()}</p>
@@ -578,8 +576,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/AbolishDisease.jpg" alt="">
                 <p>Abolish Disease</p>
             </li>
-        </ul>`;
-    case "15":
+        </ul>`
+    case '15':
       return `<ul id="select-tooltip">
                 <li class="select-tooltip-title select-priest">
                     <p>${target.textContent.trim()}</p>
@@ -609,8 +607,8 @@ function SetupHoverTooltip(target) {
                     <img src="/wrath/imgtip/AbolishDisease.jpg" alt="">
                     <p>Abolish Disease</p>
                 </li>
-            </ul>`;
-    case "16":
+            </ul>`
+    case '16':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-priest">
                 <p>${target.textContent.trim()}</p>
@@ -652,8 +650,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/AbolishDisease.jpg" alt="">
                 <p>Abolish Disease</p>
             </li>
-        </ul>`;
-    case "17":
+        </ul>`
+    case '17':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-rogue">
                 <p>${target.textContent.trim()}</p>
@@ -675,8 +673,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/ExposeArmor.jpg" alt="">
                 <p>Expose Armor</p>
             </li>
-        </ul>`;
-    case "18":
+        </ul>`
+    case '18':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-rogue">
                 <p>${target.textContent.trim()}</p>
@@ -698,8 +696,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/ExposeArmor.jpg" alt="">
                 <p>Expose Armor</p>
             </li>
-        </ul>`;
-    case "19":
+        </ul>`
+    case '19':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-rogue">
                 <p>${target.textContent.trim()}</p>
@@ -717,8 +715,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/ExposeArmor.jpg" alt="">
                 <p>Expose Armor</p>
             </li>
-        </ul>`;
-    case "20":
+        </ul>`
+    case '20':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-shaman">
                 <p>${target.textContent.trim()}</p>
@@ -760,8 +758,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/CleansingTotem.jpg" alt="">
                 <p>Cleansing Totem</p>
             </li>
-        </ul>`;
-    case "21":
+        </ul>`
+    case '21':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-shaman">
                 <p>${target.textContent.trim()}</p>
@@ -807,8 +805,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/CleansingTotem.jpg" alt="">
                 <p>Cleansing Totem</p>
             </li>
-        </ul>`;
-    case "22":
+        </ul>`
+    case '22':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-shaman">
                 <p>${target.textContent.trim()}</p>
@@ -850,8 +848,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/CleansingTotem.jpg" alt="">
                 <p>Cleansing Totem</p>
             </li>
-        </ul>`;
-    case "23":
+        </ul>`
+    case '23':
       return `<ul id="select-tooltip">
              <li class="select-tooltip-title select-warlock">
                  <p>${target.textContent.trim()}</p>
@@ -887,8 +885,8 @@ function SetupHoverTooltip(target) {
                  <img src="/wrath/imgtip/BloodPact.jpg" alt="">
                  <p>Blood Pact</p>
               </li>
-         </ul>`;
-    case "24":
+         </ul>`
+    case '24':
       return `<ul id="select-tooltip">
              <li class="select-tooltip-title select-warlock">
                  <p>${target.textContent.trim()}</p>
@@ -928,8 +926,8 @@ function SetupHoverTooltip(target) {
                  <img src="/wrath/imgtip/BloodPact.jpg" alt="">
                  <p>Blood Pact</p>
               </li>
-         </ul>`;
-    case "25":
+         </ul>`
+    case '25':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-warlock">
                 <p>${target.textContent.trim()}</p>
@@ -965,8 +963,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/BloodPact.jpg" alt="">
                 <p>Blood Pact</p>
              </li>
-        </ul>`;
-    case "26":
+        </ul>`
+    case '26':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-warrior">
                 <p>${target.textContent.trim()}</p>
@@ -1000,8 +998,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/DemoralizingShout.jpg" alt="">
                 <p>Demoralizing Shout</p>
             </li>
-        </ul>`;
-    case "27":
+        </ul>`
+    case '27':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-warrior">
                 <p>${target.textContent.trim()}</p>
@@ -1031,8 +1029,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/DemoralizingShout.jpg" alt="">
                 <p>Demoralizing Shout</p>
             </li>
-        </ul>`;
-    case "28":
+        </ul>`
+    case '28':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-warrior">
                 <p>${target.textContent.trim()}</p>
@@ -1062,8 +1060,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/DemoralizingShout.jpg" alt="">
                 <p>Demoralizing Shout</p>
             </li>
-        </ul>`;
-    case "29":
+        </ul>`
+    case '29':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-dk">
               <p>${target.textContent.trim()}</p>
@@ -1089,8 +1087,8 @@ function SetupHoverTooltip(target) {
                 <img src="/wrath/imgtip/ImprovedFrostFever.jpg" alt="">
                 <p>Improved Frost Fever</p>
             </li>
-        </ul>`;
-    case "30": // Frost
+        </ul>`
+    case '30': // Frost
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-dk">
               <p>${target.textContent.trim()}</p>
@@ -1108,8 +1106,8 @@ function SetupHoverTooltip(target) {
             <img src="/wrath/imgtip/ImprovedFrostFever.jpg" alt="">
             <p>Improved Frost Fever</p>
         </li>
-        </ul>`;
-    case "31": // Unholy
+        </ul>`
+    case '31': // Unholy
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-dk">
               <p>${target.textContent.trim()}</p>
@@ -1123,8 +1121,8 @@ function SetupHoverTooltip(target) {
              <img src="/wrath/imgtip/EbonPlaguebringer.jpg" alt="">
              <p>Ebon Plaguebringer</p>
         </li>
-        </ul>`;
-    case "32":
+        </ul>`
+    case '32':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-tank">
               <p>${target.textContent.trim()}</p>
@@ -1133,8 +1131,8 @@ function SetupHoverTooltip(target) {
             <li class="select-tooltip-flex">
             <p>No Abilities</p>
         </li>
-        </ul>`;
-    case "33":
+        </ul>`
+    case '33':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-heal">
               <p>${target.textContent.trim()}</p>
@@ -1143,9 +1141,9 @@ function SetupHoverTooltip(target) {
             <li class="select-tooltip-flex">
             <p>No Abilities</p>
         </li>
-        </ul>`;
-    case "34":
-    case "35":
+        </ul>`
+    case '34':
+    case '35':
       return `<ul id="select-tooltip">
             <li class="select-tooltip-title select-dps">
               <p>${target.textContent.trim()}</p>
@@ -1154,8 +1152,8 @@ function SetupHoverTooltip(target) {
             <li class="select-tooltip-flex">
             <p>No Abilities</p>
         </li>
-        </ul>`;
+        </ul>`
     default:
-      return;
+      return
   }
 }
