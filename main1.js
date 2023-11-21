@@ -701,31 +701,6 @@ function SetDisplay(number) {
         'reduction_debuff_04',
       ])
       break
-    case '29': // Blood
-      SetupDisplay([
-        'tank',
-        'players',
-        'vanquisher',
-        'plate',
-        'raid_buff_04',
-        'raid_buff_08',
-        'reduction_debuff_03',
-      ])
-      break
-    case '30': // Frost
-      SetupDisplay([
-        'melee',
-        'players',
-        'vanquisher',
-        'plate',
-        'raid_buff_04',
-        'raid_buff_08',
-        'reduction_debuff_03',
-      ])
-      break
-    case '31': // Unholy
-      SetupDisplay(['melee', 'players', 'vanquisher', 'plate', 'raid_buff_04'])
-      break
     case '32': // Tank
       display_data.tank += 1
       display_data.players += 1
