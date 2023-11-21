@@ -211,7 +211,6 @@ function ClearParty(target) {
 function CreateMainDatabase() {
   comp_data[2] = ''
   for (const key in display_data) {
-    console.log({ key })
     document.getElementById(key).textContent = 0
     display_data[key] = 0
   }
@@ -236,7 +235,7 @@ function SetUrl(e, string) {
   }, 400)
   let text = document.createElement('textarea')
   document.body.appendChild(text)
-  text.value = `${window.location.origin}${window.location.pathname}?${string}`
+  text.value = `${window.location.origin}${window.location.pathname}index.html?${string}`
   text.select()
   navigator.clipboard.writeText(text.value)
   document.body.removeChild(text)
@@ -381,7 +380,6 @@ function SetSpec(number, target) {
 }
 function SetupDisplay(array) {
   array.forEach((item) => {
-    console.log({ item })
     display_data[item] += 1
     document.getElementById(item).textContent = display_data[item]
   })
