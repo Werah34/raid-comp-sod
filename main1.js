@@ -22,23 +22,13 @@ const display_data = {
   raid_buff_18: 0,
   raid_damage_reduction_01: 0,
   offensive_dispel_01: 0,
-  offensive_dispel_02: 0,
   reduction_debuff_01: 0,
   reduction_debuff_02: 0,
   reduction_debuff_03: 0,
   reduction_debuff_04: 0,
   reduction_debuff_05: 0,
-  reduction_debuff_06: 0,
   resource_return_02: 0,
   resource_return_03: 0,
-  resource_return_04: 0,
-  resource_return_05: 0,
-  resource_return_06: 0,
-  resource_return_07: 0,
-  resource_return_08: 0,
-  health_return_01: 0,
-  health_return_02: 0,
-  health_return_03: 0,
   defensive_dispel_01: 0,
   defensive_dispel_02: 0,
   defensive_dispel_03: 0,
@@ -403,6 +393,7 @@ function SetSpec(number, target) {
 }
 function SetupDisplay(array) {
   array.forEach((item) => {
+    console.log({ item })
     display_data[item] += 1
     document.getElementById(item).textContent = display_data[item]
   })
@@ -428,7 +419,6 @@ function SetDisplay(number) {
         'leather',
         'raid_buff_01',
         'reduction_debuff_05',
-        'resource_return_08',
         'defensive_dispel_02',
         'defensive_dispel_04',
       ])
@@ -443,8 +433,6 @@ function SetDisplay(number) {
         'reduction_debuff_02',
         'reduction_debuff_03',
         'reduction_debuff_04',
-        'resource_return_08',
-        'health_return_01',
         'defensive_dispel_02',
         'defensive_dispel_04',
       ])
@@ -460,8 +448,6 @@ function SetDisplay(number) {
         'reduction_debuff_02',
         'reduction_debuff_03',
         'reduction_debuff_04',
-        'resource_return_08',
-        'health_return_01',
         'defensive_dispel_02',
         'defensive_dispel_04',
       ])
@@ -473,8 +459,6 @@ function SetDisplay(number) {
         'vanquisher',
         'leather',
         'raid_buff_01',
-        'resource_return_07',
-        'resource_return_08',
         'defensive_dispel_02',
         'defensive_dispel_04',
       ])
@@ -486,10 +470,10 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'offensive_dispel_01',
-        'offensive_dispel_02',
         'reduction_debuff_01',
         'reduction_debuff_02',
         'reduction_debuff_05',
+        'raid_buff_02',
       ])
       break
     case '06': // Marksmanship
@@ -499,9 +483,9 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'offensive_dispel_01',
-        'offensive_dispel_02',
         'reduction_debuff_02',
         'reduction_debuff_05',
+        'raid_buff_02',
       ])
       break
     case '07': // Survival
@@ -511,10 +495,10 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'offensive_dispel_01',
-        'offensive_dispel_02',
         'reduction_debuff_02',
         'reduction_debuff_05',
         'resource_return_02',
+        'raid_buff_02',
       ])
       break
     case '08': // Arcane
@@ -559,7 +543,6 @@ function SetDisplay(number) {
         'plate',
         'raid_buff_05',
         'resource_return_03',
-        'health_return_02',
         'defensive_dispel_01',
         'defensive_dispel_03',
         'defensive_dispel_04',
@@ -576,7 +559,6 @@ function SetDisplay(number) {
         'raid_damage_reduction_01',
         'reduction_debuff_03',
         'resource_return_03',
-        'health_return_02',
         'defensive_dispel_01',
         'defensive_dispel_03',
         'defensive_dispel_04',
@@ -592,7 +574,6 @@ function SetDisplay(number) {
         'reduction_debuff_04',
         'resource_return_02',
         'resource_return_03',
-        'health_return_02',
         'defensive_dispel_01',
         'defensive_dispel_03',
         'defensive_dispel_04',
@@ -606,8 +587,6 @@ function SetDisplay(number) {
         'cloth',
         'raid_buff_17',
         'offensive_dispel_01',
-        'resource_return_05',
-        'resource_return_06',
         'defensive_dispel_01',
         'defensive_dispel_03',
       ])
@@ -620,7 +599,6 @@ function SetDisplay(number) {
         'cloth',
         'raid_buff_17',
         'offensive_dispel_01',
-        'resource_return_05',
         'defensive_dispel_01',
         'defensive_dispel_03',
       ])
@@ -634,8 +612,6 @@ function SetDisplay(number) {
         'raid_buff_17',
         'offensive_dispel_01',
         'resource_return_02',
-        'resource_return_05',
-        'health_return_03',
         'defensive_dispel_01',
         'defensive_dispel_03',
       ])
@@ -646,7 +622,6 @@ function SetDisplay(number) {
         'players',
         'vanquisher',
         'leather',
-        'offensive_dispel_02',
         'reduction_debuff_01',
       ])
       break
@@ -656,7 +631,6 @@ function SetDisplay(number) {
         'players',
         'vanquisher',
         'leather',
-        'offensive_dispel_02',
         'reduction_debuff_01',
       ])
       break
@@ -666,7 +640,6 @@ function SetDisplay(number) {
         'players',
         'vanquisher',
         'leather',
-        'offensive_dispel_02',
         'reduction_debuff_01',
       ])
       break
@@ -691,7 +664,6 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'raid_buff_04',
-        'raid_buff_08',
         'raid_buff_13',
         'offensive_dispel_01',
         'resource_return_03',
@@ -709,7 +681,6 @@ function SetDisplay(number) {
         'raid_buff_13',
         'offensive_dispel_01',
         'resource_return_03',
-        'resource_return_04',
         'defensive_dispel_02',
         'defensive_dispel_03',
         'defensive_dispel_04',
@@ -870,7 +841,6 @@ function SetDisplay(number) {
         'players',
         'vanquisher',
         'leather',
-        'offensive_dispel_02',
         'reduction_debuff_01',
       ])
       break
@@ -892,10 +862,10 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'offensive_dispel_01',
-        'offensive_dispel_02',
         'reduction_debuff_02',
         'reduction_debuff_05',
         'resource_return_02',
+        'raid_buff_02',
       ])
       break
     default:
