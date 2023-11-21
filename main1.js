@@ -418,7 +418,6 @@ function SetDisplay(number) {
         'vanquisher',
         'leather',
         'raid_buff_01',
-        'reduction_debuff_05',
         'defensive_dispel_02',
         'defensive_dispel_04',
       ])
@@ -431,7 +430,6 @@ function SetDisplay(number) {
         'leather',
         'raid_buff_01',
         'reduction_debuff_02',
-        'reduction_debuff_03',
         'reduction_debuff_04',
         'defensive_dispel_02',
         'defensive_dispel_04',
@@ -446,8 +444,7 @@ function SetDisplay(number) {
         'raid_buff_01',
         'raid_buff_08',
         'reduction_debuff_02',
-        'reduction_debuff_03',
-        'reduction_debuff_04',
+
         'defensive_dispel_02',
         'defensive_dispel_04',
       ])
@@ -461,45 +458,17 @@ function SetDisplay(number) {
         'raid_buff_01',
         'defensive_dispel_02',
         'defensive_dispel_04',
+        'reduction_debuff_05',
       ])
       break
     case '05': //Beast Mastery
-      SetupDisplay([
-        'range',
-        'players',
-        'protector',
-        'mail',
-        'offensive_dispel_01',
-        'reduction_debuff_01',
-        'reduction_debuff_02',
-        'reduction_debuff_05',
-        'raid_buff_02',
-      ])
+      SetupDisplay(['range', 'players', 'protector', 'mail', 'raid_buff_02'])
       break
     case '06': // Marksmanship
-      SetupDisplay([
-        'range',
-        'players',
-        'protector',
-        'mail',
-        'offensive_dispel_01',
-        'reduction_debuff_02',
-        'reduction_debuff_05',
-        'raid_buff_02',
-      ])
+      SetupDisplay(['range', 'players', 'protector', 'mail', 'raid_buff_02'])
       break
     case '07': // Survival
-      SetupDisplay([
-        'range',
-        'players',
-        'protector',
-        'mail',
-        'offensive_dispel_01',
-        'reduction_debuff_02',
-        'reduction_debuff_05',
-        'resource_return_02',
-        'raid_buff_02',
-      ])
+      SetupDisplay(['range', 'players', 'protector', 'mail', 'raid_buff_02'])
       break
     case '08': // Arcane
       SetupDisplay([
@@ -508,7 +477,6 @@ function SetDisplay(number) {
         'vanquisher',
         'cloth',
         'raid_buff_12',
-        'offensive_dispel_01',
         'defensive_dispel_02',
       ])
       break
@@ -519,7 +487,6 @@ function SetDisplay(number) {
         'vanquisher',
         'cloth',
         'raid_buff_12',
-        'offensive_dispel_01',
         'defensive_dispel_02',
       ])
       break
@@ -530,8 +497,6 @@ function SetDisplay(number) {
         'vanquisher',
         'cloth',
         'raid_buff_12',
-        'offensive_dispel_01',
-        'resource_return_02',
         'defensive_dispel_02',
       ])
       break
@@ -543,9 +508,10 @@ function SetDisplay(number) {
         'plate',
         'raid_buff_05',
         'resource_return_03',
-        'defensive_dispel_01',
         'defensive_dispel_03',
         'defensive_dispel_04',
+        'raid_buff_04',
+        'raid_damage_reduction_01',
       ])
       break
     case '12': // Protection
@@ -557,11 +523,10 @@ function SetDisplay(number) {
         'raid_buff_02',
         'raid_buff_05',
         'raid_damage_reduction_01',
-        'reduction_debuff_03',
         'resource_return_03',
-        'defensive_dispel_01',
         'defensive_dispel_03',
         'defensive_dispel_04',
+        'resource_return_02',
       ])
       break
     case '13': // Retribution
@@ -571,12 +536,10 @@ function SetDisplay(number) {
         'conqueror',
         'plate',
         'raid_buff_05',
-        'reduction_debuff_04',
-        'resource_return_02',
         'resource_return_03',
-        'defensive_dispel_01',
         'defensive_dispel_03',
         'defensive_dispel_04',
+        'raid_damage_reduction_01',
       ])
       break
     case '14': // Discipline
@@ -611,7 +574,6 @@ function SetDisplay(number) {
         'cloth',
         'raid_buff_17',
         'offensive_dispel_01',
-        'resource_return_02',
         'defensive_dispel_01',
         'defensive_dispel_03',
       ])
@@ -626,22 +588,10 @@ function SetDisplay(number) {
       ])
       break
     case '18': // Combat
-      SetupDisplay([
-        'melee',
-        'players',
-        'vanquisher',
-        'leather',
-        'reduction_debuff_01',
-      ])
+      SetupDisplay(['melee', 'players', 'vanquisher', 'leather'])
       break
     case '19': // Subtlety
-      SetupDisplay([
-        'melee',
-        'players',
-        'vanquisher',
-        'leather',
-        'reduction_debuff_01',
-      ])
+      SetupDisplay(['melee', 'players', 'vanquisher', 'leather'])
       break
     case '20': // Elemental
       SetupDisplay([
@@ -650,7 +600,6 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'raid_buff_04',
-        'raid_buff_13',
         'offensive_dispel_01',
         'resource_return_03',
         'defensive_dispel_03',
@@ -664,7 +613,6 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'raid_buff_04',
-        'raid_buff_13',
         'offensive_dispel_01',
         'resource_return_03',
         'defensive_dispel_03',
@@ -678,10 +626,8 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'raid_buff_04',
-        'raid_buff_13',
         'offensive_dispel_01',
         'resource_return_03',
-        'defensive_dispel_02',
         'defensive_dispel_03',
         'defensive_dispel_04',
       ])
@@ -692,9 +638,9 @@ function SetDisplay(number) {
         'players',
         'conqueror',
         'cloth',
-        'raid_buff_12',
         'reduction_debuff_02',
-        'reduction_debuff_04',
+        'raid_buff_13',
+        'raid_buff_18',
       ])
       break
     case '24': // Demonology
@@ -705,7 +651,7 @@ function SetDisplay(number) {
         'cloth',
         'raid_buff_13',
         'reduction_debuff_02',
-        'reduction_debuff_04',
+        'raid_buff_18',
       ])
       break
     case '25': // Destruction
@@ -716,8 +662,7 @@ function SetDisplay(number) {
         'cloth',
         'raid_buff_18',
         'reduction_debuff_02',
-        'reduction_debuff_04',
-        'resource_return_02',
+        'raid_buff_13',
       ])
       break
     case '26': // Arms
@@ -727,7 +672,6 @@ function SetDisplay(number) {
         'protector',
         'plate',
         'raid_buff_05',
-        'raid_buff_18',
         'reduction_debuff_01',
         'reduction_debuff_03',
         'reduction_debuff_04',
@@ -740,7 +684,6 @@ function SetDisplay(number) {
         'protector',
         'plate',
         'raid_buff_05',
-        'raid_buff_18',
         'reduction_debuff_01',
         'reduction_debuff_03',
         'reduction_debuff_04',
@@ -753,8 +696,6 @@ function SetDisplay(number) {
         'protector',
         'plate',
         'raid_buff_05',
-        'raid_buff_18',
-        'offensive_dispel_01',
         'reduction_debuff_01',
         'reduction_debuff_03',
         'reduction_debuff_04',
@@ -816,12 +757,11 @@ function SetDisplay(number) {
         'protector',
         'mail',
         'raid_buff_04',
-        'raid_buff_08',
-        'raid_buff_13',
         'offensive_dispel_01',
         'resource_return_03',
         'defensive_dispel_03',
         'defensive_dispel_04',
+        'raid_buff_18',
       ])
       break
     case '37': // Warlock Tank
@@ -832,17 +772,10 @@ function SetDisplay(number) {
         'cloth',
         'raid_buff_13',
         'reduction_debuff_02',
-        'reduction_debuff_04',
       ])
       break
     case '38': // Rogue Tank
-      SetupDisplay([
-        'tank',
-        'players',
-        'vanquisher',
-        'leather',
-        'reduction_debuff_01',
-      ])
+      SetupDisplay(['tank', 'players', 'vanquisher', 'leather'])
       break
     case '39': // Mage Heal
       SetupDisplay([
@@ -851,22 +784,11 @@ function SetDisplay(number) {
         'vanquisher',
         'cloth',
         'raid_buff_12',
-        'offensive_dispel_01',
         'defensive_dispel_02',
       ])
       break
     case '40': // Melee Hunter
-      SetupDisplay([
-        'melee',
-        'players',
-        'protector',
-        'mail',
-        'offensive_dispel_01',
-        'reduction_debuff_02',
-        'reduction_debuff_05',
-        'resource_return_02',
-        'raid_buff_02',
-      ])
+      SetupDisplay(['melee', 'players', 'protector', 'mail', 'raid_buff_02'])
       break
     default:
       break
