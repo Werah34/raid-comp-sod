@@ -39,11 +39,7 @@ window.addEventListener('load', function () {
   GetUrlString()
 })
 const main = document.querySelector('#main-container > main')
-const popout_about = document.getElementById('popout-about')
 const hover_tooltip = document.getElementById('hover-tooltip')
-document
-  .getElementById('close_popout-about')
-  .addEventListener('click', (e) => CloseAbout(e))
 document
   .getElementById('btn_clear-all')
   .addEventListener('click', (e) => ClearDisplayData())
@@ -51,16 +47,8 @@ document
   .getElementById('btn_save-image')
   .addEventListener('click', (e) => BtnSaveImage())
 document
-  .getElementById('btn_about')
-  .addEventListener('click', (e) => BtnAbout())
-document
   .getElementById('btn_copy-link')
   .addEventListener('click', (e) => SetUrl(e, comp_data[2]))
-document
-  .getElementById('game-select')
-  .addEventListener('click', (e) =>
-    window.location.assign('https://wowraidcomp.com/cata')
-  )
 const table_drag = Array.from(
   document.querySelectorAll('.selecting-table td')
 ).filter((item) => item.classList.contains('selecting-td'))
